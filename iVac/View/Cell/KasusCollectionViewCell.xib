@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="KasusCollectionViewCell" customModule="iVac" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="128"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="280" height="128"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLm-Ng-zXH">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="128"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INL-UW-R18">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Kasus di Indonesia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CT1-Ds-l6d">
+                                        <rect key="frame" x="8" y="7" width="187" height="20"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="17U-Ed-nJh"/>
+                                    <constraint firstItem="CT1-Ds-l6d" firstAttribute="top" secondItem="INL-UW-R18" secondAttribute="top" constant="7" id="QXm-GV-ipx"/>
+                                    <constraint firstAttribute="bottom" secondItem="CT1-Ds-l6d" secondAttribute="bottom" constant="7" id="nJk-Yc-Iz6"/>
+                                    <constraint firstItem="CT1-Ds-l6d" firstAttribute="leading" secondItem="INL-UW-R18" secondAttribute="leading" constant="8" id="zmj-19-5oa"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9999999999999999999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndv-vx-iat">
+                                <rect key="frame" x="8" y="62" width="238" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <constraints>
+                            <constraint firstItem="INL-UW-R18" firstAttribute="leading" secondItem="CLm-Ng-zXH" secondAttribute="leading" id="Six-cU-8Sh"/>
+                            <constraint firstItem="INL-UW-R18" firstAttribute="top" secondItem="CLm-Ng-zXH" secondAttribute="top" id="dHe-06-tSm"/>
+                            <constraint firstAttribute="trailing" secondItem="INL-UW-R18" secondAttribute="trailing" id="eJf-A3-t1u"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="CLm-Ng-zXH" secondAttribute="trailing" id="40r-Y9-Bkg"/>
+                <constraint firstAttribute="bottom" secondItem="CLm-Ng-zXH" secondAttribute="bottom" id="5aB-cf-flZ"/>
+                <constraint firstItem="CLm-Ng-zXH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Lxz-Nz-USr"/>
+                <constraint firstItem="CLm-Ng-zXH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gS9-s8-dJh"/>
+            </constraints>
+            <connections>
+                <outlet property="allView" destination="CLm-Ng-zXH" id="Vg8-OY-j7w"/>
+                <outlet property="countLabel" destination="ndv-vx-iat" id="9SH-7A-KvT"/>
+                <outlet property="title" destination="CT1-Ds-l6d" id="sOV-xM-Fmv"/>
+                <outlet property="titleView" destination="INL-UW-R18" id="qqk-lV-D6n"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="108.48214285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

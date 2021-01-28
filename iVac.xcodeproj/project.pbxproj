@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		ECA78AE825C24EA00021AEC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA78AE725C24EA00021AEC0 /* AppDelegate.swift */; };
 		ECA78AEA25C24EA00021AEC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA78AE925C24EA00021AEC0 /* SceneDelegate.swift */; };
-		ECA78AEC25C24EA00021AEC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA78AEB25C24EA00021AEC0 /* ViewController.swift */; };
+		ECA78AEC25C24EA00021AEC0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA78AEB25C24EA00021AEC0 /* LoginViewController.swift */; };
 		ECA78AEF25C24EA00021AEC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA78AED25C24EA00021AEC0 /* Main.storyboard */; };
 		ECA78AF125C24EA10021AEC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECA78AF025C24EA10021AEC0 /* Assets.xcassets */; };
 		ECA78AF425C24EA10021AEC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA78AF225C24EA10021AEC0 /* LaunchScreen.storyboard */; };
+		ECD4634A25C28C5F00696404 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD4634925C28C5F00696404 /* HomeViewController.swift */; };
+		ECFB1D5E25C2879E00ECDCB1 /* KasusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB1D5C25C2879E00ECDCB1 /* KasusCollectionViewCell.swift */; };
+		ECFB1D5F25C2879E00ECDCB1 /* KasusCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECFB1D5D25C2879E00ECDCB1 /* KasusCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ECA78AE425C24EA00021AEC0 /* iVac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iVac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECA78AE725C24EA00021AEC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECA78AE925C24EA00021AEC0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ECA78AEB25C24EA00021AEC0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ECA78AEB25C24EA00021AEC0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ECA78AEE25C24EA00021AEC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECA78AF025C24EA10021AEC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECA78AF325C24EA10021AEC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECA78AF525C24EA10021AEC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECD4634925C28C5F00696404 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		ECFB1D5C25C2879E00ECDCB1 /* KasusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KasusCollectionViewCell.swift; sourceTree = "<group>"; };
+		ECFB1D5D25C2879E00ECDCB1 /* KasusCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KasusCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,66 @@
 		ECA78AE625C24EA00021AEC0 /* iVac */ = {
 			isa = PBXGroup;
 			children = (
-				ECA78AE725C24EA00021AEC0 /* AppDelegate.swift */,
-				ECA78AE925C24EA00021AEC0 /* SceneDelegate.swift */,
-				ECA78AEB25C24EA00021AEC0 /* ViewController.swift */,
-				ECA78AED25C24EA00021AEC0 /* Main.storyboard */,
+				ECA78AFC25C24EB60021AEC0 /* Base */,
+				ECA78B0225C24F490021AEC0 /* Model */,
+				ECA78AFE25C24EC10021AEC0 /* Controller */,
+				ECA78B0125C24F0B0021AEC0 /* View */,
 				ECA78AF025C24EA10021AEC0 /* Assets.xcassets */,
 				ECA78AF225C24EA10021AEC0 /* LaunchScreen.storyboard */,
 				ECA78AF525C24EA10021AEC0 /* Info.plist */,
 			);
 			path = iVac;
+			sourceTree = "<group>";
+		};
+		ECA78AFC25C24EB60021AEC0 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				ECA78AE725C24EA00021AEC0 /* AppDelegate.swift */,
+				ECA78AE925C24EA00021AEC0 /* SceneDelegate.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		ECA78AFE25C24EC10021AEC0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB1D6125C287AE00ECDCB1 /* Cell */,
+				ECA78AEB25C24EA00021AEC0 /* LoginViewController.swift */,
+				ECD4634925C28C5F00696404 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ECA78B0125C24F0B0021AEC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB1D5A25C2876900ECDCB1 /* Cell */,
+				ECA78AED25C24EA00021AEC0 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ECA78B0225C24F490021AEC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ECFB1D5A25C2876900ECDCB1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB1D5D25C2879E00ECDCB1 /* KasusCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		ECFB1D6125C287AE00ECDCB1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				ECFB1D5C25C2879E00ECDCB1 /* KasusCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +183,7 @@
 			files = (
 				ECA78AF425C24EA10021AEC0 /* LaunchScreen.storyboard in Resources */,
 				ECA78AF125C24EA10021AEC0 /* Assets.xcassets in Resources */,
+				ECFB1D5F25C2879E00ECDCB1 /* KasusCollectionViewCell.xib in Resources */,
 				ECA78AEF25C24EA00021AEC0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +195,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECA78AEC25C24EA00021AEC0 /* ViewController.swift in Sources */,
+				ECD4634A25C28C5F00696404 /* HomeViewController.swift in Sources */,
+				ECA78AEC25C24EA00021AEC0 /* LoginViewController.swift in Sources */,
 				ECA78AE825C24EA00021AEC0 /* AppDelegate.swift in Sources */,
+				ECFB1D5E25C2879E00ECDCB1 /* KasusCollectionViewCell.swift in Sources */,
 				ECA78AEA25C24EA00021AEC0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
