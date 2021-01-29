@@ -82,6 +82,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Zi0-0z-7LF"/>
                     <connections>
+                        <outlet property="masukButton" destination="3Lz-do-un0" id="Mi3-zI-IPN"/>
+                        <outlet property="masukPressed" destination="3Lz-do-un0" id="Plb-b9-IJW"/>
                         <segue destination="4eD-0s-n1p" kind="show" identifier="toDaftar" id="YHP-di-O3h"/>
                     </connections>
                 </viewController>
@@ -92,7 +94,7 @@
         <!--Daftar-->
         <scene sceneID="Yxq-zG-HiT">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="4eD-0s-n1p" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="4eD-0s-n1p" customClass="DaftarViewController" customModule="iVac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="muV-z5-C6Q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,6 +187,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Daftar" id="b7B-VG-fvS"/>
+                    <connections>
+                        <outlet property="daftarButton" destination="FqG-sM-3wa" id="vYa-UL-Moe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFj-WE-LwH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -436,10 +441,10 @@
             </objects>
             <point key="canvasLocation" x="3039.375" y="-3090"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit View Controller-->
         <scene sceneID="wIn-ZI-RzZ">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="6jB-pp-zhR" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="6jB-pp-zhR" customClass="EditViewController" customModule="iVac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cit-ly-49J">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="550"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -598,35 +603,134 @@
                     </view>
                     <navigationItem key="navigationItem" id="bSs-xx-Uku"/>
                     <size key="freeformSize" width="320" height="550"/>
+                    <connections>
+                        <outlet property="simpanButton" destination="Dy7-mH-5ue" id="uSm-lN-Uij"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l82-XH-IBz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3915" y="-4720"/>
         </scene>
-        <!--View Controller-->
+        <!--Mandiri View Controller-->
         <scene sceneID="LNP-7k-Ggf">
             <objects>
-                <viewController id="AVl-eV-Y7X" sceneMemberID="viewController">
+                <viewController id="AVl-eV-Y7X" customClass="MandiriViewController" customModule="iVac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bds-fJ-0Ps">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lokasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfz-8G-VHJ">
-                                <rect key="frame" x="16" y="116" width="59" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lokasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfz-8G-VHJ">
+                                <rect key="frame" x="20" y="74" width="280" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Provinsi" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vbp-ne-tDi">
+                                <rect key="frame" x="20" y="106" width="280" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zml-e1-wko">
+                                <rect key="frame" x="0.0" y="269" width="320" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="8Sl-p1-5Cs"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xn1-iG-yom">
+                                <rect key="frame" x="30" y="165" width="260" height="46"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="hbg-2L-nYw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Cari">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qq5-9n-h9R"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Hfz-8G-VHJ" firstAttribute="leading" secondItem="Qq5-9n-h9R" secondAttribute="leading" constant="20" id="1W2-G5-Goi"/>
+                            <constraint firstItem="Zml-e1-wko" firstAttribute="trailing" secondItem="Qq5-9n-h9R" secondAttribute="trailing" id="3dk-bo-S4e"/>
+                            <constraint firstItem="vbp-ne-tDi" firstAttribute="leading" secondItem="Qq5-9n-h9R" secondAttribute="leading" constant="20" id="40D-oB-Ajv"/>
+                            <constraint firstItem="Zml-e1-wko" firstAttribute="bottom" secondItem="Qq5-9n-h9R" secondAttribute="bottom" id="Be1-Yh-c2o"/>
+                            <constraint firstItem="Qq5-9n-h9R" firstAttribute="trailing" secondItem="Xn1-iG-yom" secondAttribute="trailing" constant="30" id="JJS-cD-L3Z"/>
+                            <constraint firstItem="Qq5-9n-h9R" firstAttribute="trailing" secondItem="Hfz-8G-VHJ" secondAttribute="trailing" constant="20" id="JbG-nm-N98"/>
+                            <constraint firstItem="Xn1-iG-yom" firstAttribute="leading" secondItem="Qq5-9n-h9R" secondAttribute="leading" constant="30" id="LIe-EP-cOH"/>
+                            <constraint firstItem="vbp-ne-tDi" firstAttribute="top" secondItem="Hfz-8G-VHJ" secondAttribute="bottom" constant="8" symbolic="YES" id="MBi-s9-Nyh"/>
+                            <constraint firstItem="Zml-e1-wko" firstAttribute="leading" secondItem="Qq5-9n-h9R" secondAttribute="leading" id="Oc9-jM-WkB"/>
+                            <constraint firstItem="Qq5-9n-h9R" firstAttribute="trailing" secondItem="vbp-ne-tDi" secondAttribute="trailing" constant="20" id="Yq2-hC-xoi"/>
+                            <constraint firstItem="Hfz-8G-VHJ" firstAttribute="top" secondItem="Qq5-9n-h9R" secondAttribute="top" constant="30" id="Zu3-Rz-Iqj"/>
+                            <constraint firstItem="Xn1-iG-yom" firstAttribute="top" secondItem="vbp-ne-tDi" secondAttribute="bottom" constant="25" id="hvH-8x-Kwb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mI9-JK-pLA"/>
+                    <connections>
+                        <segue destination="oSl-n5-nRm" kind="show" id="U4L-GJ-ged"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTe-BG-nEQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3041.25" y="-2293.75"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eYa-I0-gke">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="oSl-n5-nRm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ROf-hH-2c2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="PBj-Td-DD4">
+                                <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="vtO-B7-FRz"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kys-3e-9bB">
+                                <rect key="frame" x="0.0" y="88" width="320" height="392"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Efm-U8-FwG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kys-3e-9bB" firstAttribute="top" secondItem="PBj-Td-DD4" secondAttribute="bottom" id="80c-We-NDQ"/>
+                            <constraint firstItem="kys-3e-9bB" firstAttribute="leading" secondItem="Efm-U8-FwG" secondAttribute="leading" id="8Gc-Lv-gYn"/>
+                            <constraint firstItem="kys-3e-9bB" firstAttribute="trailing" secondItem="Efm-U8-FwG" secondAttribute="trailing" id="9yQ-Da-eHC"/>
+                            <constraint firstItem="PBj-Td-DD4" firstAttribute="top" secondItem="Efm-U8-FwG" secondAttribute="top" id="Dzf-qm-U4f"/>
+                            <constraint firstItem="kys-3e-9bB" firstAttribute="top" secondItem="PBj-Td-DD4" secondAttribute="bottom" id="UTc-uR-HIZ"/>
+                            <constraint firstItem="PBj-Td-DD4" firstAttribute="trailing" secondItem="Efm-U8-FwG" secondAttribute="trailing" id="VGz-gj-J7B"/>
+                            <constraint firstItem="PBj-Td-DD4" firstAttribute="leading" secondItem="Efm-U8-FwG" secondAttribute="leading" id="W7j-vh-OqU"/>
+                            <constraint firstItem="kys-3e-9bB" firstAttribute="bottom" secondItem="Efm-U8-FwG" secondAttribute="bottom" id="Y5d-RA-RrC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DLr-6P-9Tf"/>
+                    <connections>
+                        <segue destination="Dsa-1l-PKa" kind="show" id="5ZU-k9-f1Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XfJ-Wj-nJ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3915" y="-2295"/>
+        </scene>
+        <!--Detail Rs View Controller-->
+        <scene sceneID="lyB-9D-VPr">
+            <objects>
+                <viewController id="Dsa-1l-PKa" customClass="DetailRsViewController" customModule="iVac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WxO-0d-LnP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="feU-bx-7pT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZJJ-6f-YV2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g94-pd-4t1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4914" y="-2295"/>
         </scene>
         <!--Vaksin View Controller-->
         <scene sceneID="qOC-l2-hnu">
@@ -642,13 +746,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="atc-07-c3w">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nomor Induk Kependudukan" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="atc-07-c3w">
                                 <rect key="frame" x="20" y="196" width="280" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Waf-4K-2lW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="postal-code"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKc-0v-lzy">
                                 <rect key="frame" x="20" y="260" width="280" height="55"/>
@@ -660,6 +764,9 @@
                                 <state key="normal" title="Cek">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="cekPressed:" destination="rjP-Tn-Fdj" eventType="touchUpInside" id="pOO-6p-kc2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="u8z-l6-eRj"/>
@@ -678,6 +785,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="poh-Ai-Xoa"/>
                     <connections>
+                        <outlet property="cekButton" destination="bKc-0v-lzy" id="Qnv-Ty-sFG"/>
+                        <outlet property="nikText" destination="atc-07-c3w" id="Vbh-u4-LOO"/>
                         <segue destination="0xT-qB-HQw" kind="show" identifier="toConfirm" id="upX-Bs-Heo"/>
                     </connections>
                 </viewController>
@@ -685,10 +794,10 @@
             </objects>
             <point key="canvasLocation" x="3041.25" y="-1535"/>
         </scene>
-        <!--View Controller-->
+        <!--Berhasil Cek View Controller-->
         <scene sceneID="tSq-ey-IqK">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="0xT-qB-HQw" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="0xT-qB-HQw" customClass="BerhasilCekViewController" customModule="iVac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U1d-5u-5zr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -703,11 +812,11 @@
                                             <constraint firstAttribute="height" constant="123" id="lql-5d-AwN"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmQ-ut-TWN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmQ-ut-TWN">
                                         <rect key="frame" x="0.0" y="136" width="280" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="110" id="TGg-Cn-b9v"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="saw-j2-2Ai"/>
+                                            <constraint firstAttribute="width" constant="280" id="saw-j2-2Ai"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -726,6 +835,9 @@
                                 <state key="normal" title="DETAIL">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirmPressed:" destination="0xT-qB-HQw" eventType="touchUpInside" id="8PU-uu-aL8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="km4-cN-QM0">
                                 <rect key="frame" x="20" y="371" width="280" height="54"/>
@@ -738,6 +850,9 @@
                                 <state key="normal" title="KEMBALI">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirmPressed:" destination="0xT-qB-HQw" eventType="touchUpInside" id="j2y-fE-Bfg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Otj-Gg-U1E"/>
@@ -755,6 +870,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="nS8-6P-xEA"/>
                     <connections>
+                        <outlet property="detailButton" destination="nYj-bV-B0z" id="9sd-5w-vup"/>
+                        <outlet property="hasilImage" destination="Vhe-Zy-WoD" id="e5o-aS-46d"/>
+                        <outlet property="hasilLabel" destination="ZmQ-ut-TWN" id="Sg7-W2-Tis"/>
+                        <outlet property="kembaliButton" destination="km4-cN-QM0" id="vfc-h6-tQd"/>
                         <segue destination="oov-bt-w08" kind="show" identifier="toHasil" id="RRF-9b-1P1"/>
                     </connections>
                 </viewController>
@@ -762,94 +881,94 @@
             </objects>
             <point key="canvasLocation" x="4020" y="-1535"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Cek View Controller-->
         <scene sceneID="QKn-nP-enl">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="oov-bt-w08" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="oov-bt-w08" customClass="DetailCekViewController" customModule="iVac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TLa-YE-sBW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail Vaksinasi Pemerintah" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jam-Oz-L04">
-                                <rect key="frame" x="20" y="59" width="280" height="24"/>
+                                <rect key="frame" x="20" y="64" width="280" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcb-EU-pSC">
-                                <rect key="frame" x="20" y="93" width="280" height="18"/>
+                                <rect key="frame" x="20" y="98" width="280" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpP-51-2Nw">
-                                <rect key="frame" x="20" y="116" width="280" height="18"/>
+                                <rect key="frame" x="20" y="121" width="280" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlT-s7-ivQ">
-                                <rect key="frame" x="20" y="167" width="280" height="18"/>
+                                <rect key="frame" x="20" y="172" width="280" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLe-tZ-M7h">
-                                <rect key="frame" x="20" y="218" width="280" height="18"/>
+                                <rect key="frame" x="20" y="223" width="280" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jenis Kelamin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abK-by-AiF">
-                                <rect key="frame" x="20" y="144" width="280" height="18"/>
+                                <rect key="frame" x="20" y="149" width="280" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tanggal Vaksinasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFj-LP-ti5">
-                                <rect key="frame" x="20" y="195" width="280" height="18"/>
+                                <rect key="frame" x="20" y="200" width="280" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rumah Sakit Rujukan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4v-im-ceH">
-                                <rect key="frame" x="20" y="297" width="280" height="18"/>
+                                <rect key="frame" x="20" y="302" width="280" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8k-CO-0CZ">
-                                <rect key="frame" x="20" y="320" width="280" height="18"/>
+                                <rect key="frame" x="20" y="325" width="280" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kontak Rumah Sakit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mht-QQ-8eo">
-                                <rect key="frame" x="20" y="246" width="280" height="18"/>
+                                <rect key="frame" x="20" y="251" width="280" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbs-VD-awl">
-                                <rect key="frame" x="20" y="269" width="280" height="18"/>
+                                <rect key="frame" x="20" y="274" width="280" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jenis Vaksin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5S-K9-Izb">
-                                <rect key="frame" x="20" y="348" width="280" height="18"/>
+                                <rect key="frame" x="20" y="353" width="280" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKC-CW-0C2">
-                                <rect key="frame" x="20" y="371" width="280" height="18"/>
+                                <rect key="frame" x="20" y="376" width="280" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXY-Tc-KnX">
-                                <rect key="frame" x="20" y="404" width="280" height="54"/>
+                                <rect key="frame" x="20" y="409" width="280" height="54"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="kuM-7W-YUt"/>
@@ -858,6 +977,9 @@
                                 <state key="normal" title="KEMBALI">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="kembaliPressed:" destination="oov-bt-w08" eventType="touchUpInside" id="0lE-uI-wlw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rYC-jd-qqg"/>
@@ -887,7 +1009,7 @@
                             <constraint firstItem="Jam-Oz-L04" firstAttribute="leading" secondItem="rYC-jd-qqg" secondAttribute="leading" constant="20" id="beS-NA-ffo"/>
                             <constraint firstItem="N5S-K9-Izb" firstAttribute="top" secondItem="O8k-CO-0CZ" secondAttribute="bottom" constant="10" id="bzq-GB-8FP"/>
                             <constraint firstItem="rYC-jd-qqg" firstAttribute="trailing" secondItem="Jam-Oz-L04" secondAttribute="trailing" constant="20" id="cwO-Gk-oRF"/>
-                            <constraint firstItem="Jam-Oz-L04" firstAttribute="top" secondItem="rYC-jd-qqg" secondAttribute="top" constant="15" id="dkU-Xr-Mv8"/>
+                            <constraint firstItem="Jam-Oz-L04" firstAttribute="top" secondItem="rYC-jd-qqg" secondAttribute="top" constant="20" id="dkU-Xr-Mv8"/>
                             <constraint firstItem="UXY-Tc-KnX" firstAttribute="top" secondItem="nKC-CW-0C2" secondAttribute="bottom" constant="15" id="dpw-hb-Z9G"/>
                             <constraint firstItem="UXY-Tc-KnX" firstAttribute="leading" secondItem="rYC-jd-qqg" secondAttribute="leading" constant="20" id="h8p-aS-xW1"/>
                             <constraint firstItem="t4v-im-ceH" firstAttribute="leading" secondItem="rYC-jd-qqg" secondAttribute="leading" constant="20" id="hWK-3h-xJq"/>
@@ -908,6 +1030,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="g7P-f0-KZg"/>
+                    <connections>
+                        <outlet property="kembaliButton" destination="UXY-Tc-KnX" id="GBx-5q-x1s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mF-fR-TLq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1024,7 +1149,9 @@
                             <constraint firstItem="g0p-fg-57y" firstAttribute="top" secondItem="MyY-0r-FuV" secondAttribute="top" id="z9u-Ds-wpG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="aWH-xz-LVe"/>
+                    <navigationItem key="navigationItem" id="aWH-xz-LVe">
+                        <barButtonItem key="backBarButtonItem" title=" " id="2Tn-RE-FvI"/>
+                    </navigationItem>
                     <size key="freeformSize" width="320" height="690"/>
                     <connections>
                         <outlet property="beritaCV" destination="xFN-wt-t4n" id="8O5-t2-cE0"/>
@@ -1069,7 +1196,7 @@
                     <tabBarItem key="tabBarItem" title="Beranda" image="home" selectedImage="home 1" id="DDa-Dk-uwL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="00c-JC-7Cx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1107,7 +1234,7 @@
                     <tabBarItem key="tabBarItem" title="Cek Vaksin" image="shield" selectedImage="shield 1" id="n6v-pv-5iJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tf2-db-3Hf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1126,7 +1253,7 @@
                     <tabBarItem key="tabBarItem" title="Jenis Vaksin" image="information" selectedImage="information (1) 1" id="diK-Vq-eTi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="G23-Dh-ByZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1157,10 +1284,10 @@
             </objects>
             <point key="canvasLocation" x="2043.75" y="-2293.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Berita View Controller-->
         <scene sceneID="vzf-AE-KGQ">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="eao-0D-NJQ" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="eao-0D-NJQ" customClass="DetailBeritaViewController" customModule="iVac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CFu-QQ-Kfq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
