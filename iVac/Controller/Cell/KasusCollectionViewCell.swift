@@ -31,6 +31,6 @@ class KasusCollectionViewCell: UICollectionViewCell {
         //allView
         allView.clipsToBounds = true
         allView.layer.cornerRadius = 5
-        allView.backgroundColor = .systemBlue
-        }
+        allView.backgroundColor = color
+    }
 }
