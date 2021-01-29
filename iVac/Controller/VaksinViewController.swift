@@ -15,7 +15,7 @@ class VaksinViewController: UIViewController {
     var hasil: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.backgroundColor = .white
@@ -39,6 +39,8 @@ class VaksinViewController: UIViewController {
         cekButton.layer.shadowOpacity = 0.25
         cekButton.layer.shadowRadius = 12
         cekButton.layer.masksToBounds = false
+        
+        nikText.tintColor = .systemBlue
     }
 
     @IBAction func cekPressed(_ sender: UIButton) {
@@ -49,6 +51,8 @@ class VaksinViewController: UIViewController {
         } else {
             hasil = false
         }
+        
+        nikText.resignFirstResponder()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -61,3 +65,4 @@ class VaksinViewController: UIViewController {
         }
     }
 }
+

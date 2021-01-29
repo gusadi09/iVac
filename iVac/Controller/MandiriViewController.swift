@@ -9,21 +9,32 @@ import UIKit
 
 class MandiriViewController: UIViewController {
 
+    @IBOutlet weak var showcaseTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        showcaseTable.delegate = self
+        showcaseTable.dataSource = self
+        showcaseTable.register(UINib(nibName: "JualTableViewCell", bundle: nil), forCellReuseIdentifier: "jualCell")
+    }
+
+}
+
+extension MandiriViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = showcaseTable.dequeueReusableCell(withIdentifier: "jualCell", for: indexPath) as? JualTableViewCell
+        
+        cell?.prodLabel.text = "SinoVac"
+        cell?.priceLabel.text = "IDR 200.000"
+        
+        return cell!
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toPesan", sender: self)
+    }
 }

@@ -9,18 +9,18 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var kasusCV: UICollectionView!
     @IBOutlet weak var beritaCV: UICollectionView!
     @IBOutlet weak var tipsCV: UICollectionView!
+    @IBOutlet weak var allView: UIView!
+    @IBOutlet weak var titleView: UIView!
+    @IBOutlet weak var totalKasusLabel: UILabel!
+    @IBOutlet weak var sembuhLabel: UILabel!
+    @IBOutlet weak var meninggalLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
-        
-        kasusCV.delegate = self
-        kasusCV.dataSource = self
-        kasusCV.register(UINib(nibName: "KasusCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "kasusCellView")
         
         beritaCV.delegate = self
         beritaCV.dataSource = self
@@ -37,6 +37,8 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.backgroundColor = .white
+        
+        navigationController?.navigationBar.backItem?.backBarButtonItem?.tintColor = .black
       
         let label = UILabel()
         label.textColor = .systemBlue
@@ -58,6 +60,20 @@ class HomeViewController: UIViewController {
         tabBarController?.tabBar.layer.shadowOffset = CGSize(width: 0.0, height: -4.0)
         tabBarController?.tabBar.layer.shadowOpacity = 0.1
         tabBarController?.tabBar.layer.shadowRadius = 12
+        
+        //Title View
+        titleView.clipsToBounds = true
+        titleView.layer.cornerRadius = 5
+        titleView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        
+        //allView
+        allView.clipsToBounds = true
+        allView.layer.cornerRadius = 5
+        allView.layer.shadowColor = UIColor.black.cgColor
+        allView.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
+        allView.layer.shadowOpacity = 0.2
+        allView.layer.shadowRadius = 12
+        allView.layer.masksToBounds = false
     }
 
 }
@@ -65,9 +81,7 @@ class HomeViewController: UIViewController {
 //MARK: - Collection View Extension
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == kasusCV {
-            return 2
-        } else if collectionView == beritaCV {
+        if collectionView == beritaCV {
             return 5
         } else {
             return 1
@@ -75,18 +89,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == kasusCV {
-            let cell1 = kasusCV.dequeueReusableCell(withReuseIdentifier: "kasusCellView", for: indexPath) as? KasusCollectionViewCell
+        if collectionView == beritaCV {
+            let cell1 = beritaCV.dequeueReusableCell(withReuseIdentifier: "beritaCell", for: indexPath) as? BeritaCollectionViewCell
             
             return cell1!
-        } else if collectionView == beritaCV {
-            let cell2 = beritaCV.dequeueReusableCell(withReuseIdentifier: "beritaCell", for: indexPath) as? BeritaCollectionViewCell
+        } else {
+            let cell2 = tipsCV.dequeueReusableCell(withReuseIdentifier: "tipsCell", for: indexPath) as? TipsCollectionViewCell
             
             return cell2!
-        } else {
-            let cell3 = tipsCV.dequeueReusableCell(withReuseIdentifier: "tipsCell", for: indexPath) as? TipsCollectionViewCell
-            
-            return cell3!
         }
     }
     

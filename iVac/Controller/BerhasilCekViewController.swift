@@ -55,7 +55,7 @@ class BerhasilCekViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
     }
     
     @IBAction func confirmPressed(_ sender: UIButton) {

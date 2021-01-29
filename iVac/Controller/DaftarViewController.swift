@@ -12,6 +12,7 @@ class DaftarViewController: UIViewController {
     @IBOutlet weak var daftarButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         daftarButton.clipsToBounds = true
         daftarButton.layer.cornerRadius = 25
         daftarButton.layer.shadowColor = UIColor.systemBlue.cgColor

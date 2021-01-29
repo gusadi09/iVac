@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         masukButton.clipsToBounds = true
         masukButton.layer.cornerRadius = 25
         masukButton.layer.shadowColor = UIColor.systemBlue.cgColor
@@ -23,5 +24,8 @@ class LoginViewController: UIViewController {
     }
 
 
+    @IBAction func daftarPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "toDaftar", sender: self)
+    }
 }
 

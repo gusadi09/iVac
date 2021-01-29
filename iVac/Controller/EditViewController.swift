@@ -10,9 +10,12 @@ import UIKit
 class EditViewController: UIViewController {
 
     @IBOutlet weak var simpanButton: UIButton!
+    @IBOutlet weak var datePick: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        datePick.tintColor = .systemBlue
 
         simpanButton.clipsToBounds = true
         simpanButton.layer.cornerRadius = 25
