@@ -48,6 +48,8 @@ extension JenisViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.titleLabel.text =  "Sinovac (Corona Vac)"
         cell?.isiLabel.text = "CoronaVac adalah nama untuk vaksin COVID-19 yang dikembangkan oleh perusahaan farmasi asal China, Sinovac. Ini adalah vaksin pertama yang berhasil didapatkan oleh pemerintah Indonesia dan dipakai untuk memulai program vaksinasi.Vaksin dibuat dengan teknologi inactivated virus alias memanfaatkan virus yang sudah dilemahkan."
         
+        cell?.selectionStyle = .none
+        
         return cell!
     }
     

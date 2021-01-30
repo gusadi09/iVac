@@ -7,6 +7,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enabledTouchResignedClasses = [VaksinViewController.self, LoginViewController.self, EditViewController.self, DaftarViewController.self]
+        
+        print("\(String(describing: Realm.Configuration.defaultConfiguration.fileURL))")
+
+        do {
+            _ = try Realm()
+        } catch {
+            print("Error realm: \(error)")
+        }
+        
         return true
     }
 

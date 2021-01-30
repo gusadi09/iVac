@@ -74,8 +74,36 @@ class HomeViewController: UIViewController {
         allView.layer.shadowOpacity = 0.2
         allView.layer.shadowRadius = 12
         allView.layer.masksToBounds = false
+        
+        loadData()
     }
 
+    func loadData() {
+        guard let urlString = URL(string: "https://api.kawalcorona.com/indonesia/") else {return}
+        
+        let request = URLRequest(url: urlString)
+        
+        let task = URLSession.shared.dataTask(with: request) { [self] (data, response, error) in
+            guard let response = response as? HTTPURLResponse, let data = data else {return}
+            
+            if response.statusCode == 200 {
+                let decoder = JSONDecoder()
+                
+                guard let covid = try? decoder.decode([CovidData].self, from: data) else {return}
+                
+                DispatchQueue.main.async {
+                    sembuhLabel.text = covid[0].sembuh
+                    totalKasusLabel.text = covid[0].positif
+                    meninggalLabel.text = covid[0].meninggal
+                }
+    
+            } else {
+                print("ERROR: \(data), HTTP Status: \(response.statusCode)")
+            }
+        }
+        
+        task.resume()
+    }
 }
 
 //MARK: - Collection View Extension

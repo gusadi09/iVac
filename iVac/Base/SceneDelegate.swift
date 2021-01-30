@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import RealmSwift
+
+let app = App(id: "ivac-fgock")
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
