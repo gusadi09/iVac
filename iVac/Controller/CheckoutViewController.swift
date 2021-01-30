@@ -7,13 +7,18 @@
 
 import UIKit
 
-class CheckoutViewController: UIViewController {
+class CheckoutViewController: UIViewController, LokasiVaksinDelegate, MetodeDelegate {
+ 
 
     @IBOutlet weak var pilihLokasiVaksinButton: UIView!
     @IBOutlet weak var pilihMetodeButton: UIView!
     @IBOutlet weak var bayarButton: UIButton!
+    @IBOutlet weak var lokasiLabel: UILabel!
+    @IBOutlet weak var metodeLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         pilihMetodeButton.clipsToBounds = true
         pilihMetodeButton.layer.cornerRadius = 10
         pilihMetodeButton.layer.borderWidth = 1
@@ -38,13 +43,34 @@ class CheckoutViewController: UIViewController {
         
         navigationController?.navigationBar.backItem?.backBarButtonItem?.tintColor = .black
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
+    func passDataBack(namaRs: String) {
+       
+        lokasiLabel.text = namaRs
+    }
+    
+    func passDataMetodeBack(namaMetode: String) {
+        metodeLabel.text = namaMetode
+    }
+    
     @IBAction func metodePressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "toMetode", sender: self)
+        let metvc = storyboard?.instantiateViewController(withIdentifier: "MetodeViewController") as? MetodeViewController
+        
+        metvc?.delegate = self
+        present(metvc!, animated: true, completion: nil)
     }
     
     @IBAction func rsPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "toRumahSakit", sender: self)
+      
+        let vc = storyboard?.instantiateViewController(withIdentifier: "LokasiVaksinViewController") as? LokasiVaksinViewController
+        
+        vc?.delegate = self
+        present(vc!, animated: true, completion: nil)
     }
     
     @IBAction func bayarPressed(_ sender: UIButton) {

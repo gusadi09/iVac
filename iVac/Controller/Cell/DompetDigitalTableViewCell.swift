@@ -9,6 +9,8 @@ import UIKit
 
 class DompetDigitalTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageTitle: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

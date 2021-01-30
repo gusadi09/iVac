@@ -110,7 +110,7 @@ class AkunViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let userEmail = defaults.string(forKey: "email")
-        
+
         for user in user! {
             if user.email == userEmail {
                 DispatchQueue.main.async { [self] in
@@ -162,8 +162,6 @@ class AkunViewController: UIViewController {
                 self.profileScrollView.isHidden = true
             }
         }
-        defaults.setValue("", forKey: "email")
-        defaults.synchronize()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

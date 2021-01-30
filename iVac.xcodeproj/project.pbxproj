@@ -25,6 +25,9 @@
 		EC3A571925C53BE80001ECD5 /* TransferBankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC3A571725C53BE80001ECD5 /* TransferBankTableViewCell.xib */; };
 		EC3A572225C58B5A0001ECD5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A572125C58B5A0001ECD5 /* User.swift */; };
 		EC3A572A25C5CB8C0001ECD5 /* CovidData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A572925C5CB8C0001ECD5 /* CovidData.swift */; };
+		EC3A572F25C5DFF50001ECD5 /* MetodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A572E25C5DFF50001ECD5 /* MetodeViewController.swift */; };
+		EC3A573225C5FA7B0001ECD5 /* BeritaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A573125C5FA7B0001ECD5 /* BeritaModel.swift */; };
+		EC3A573525C5FAC90001ECD5 /* BeritaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A573425C5FAC90001ECD5 /* BeritaData.swift */; };
 		EC5054F225C3681900348E9D /* JenisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5054F025C3681900348E9D /* JenisTableViewCell.swift */; };
 		EC5054F325C3681900348E9D /* JenisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC5054F125C3681900348E9D /* JenisTableViewCell.xib */; };
 		EC5054F725C36B6800348E9D /* JenisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5054F625C36B6800348E9D /* JenisViewController.swift */; };
@@ -71,6 +74,9 @@
 		EC3A571725C53BE80001ECD5 /* TransferBankTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransferBankTableViewCell.xib; sourceTree = "<group>"; };
 		EC3A572125C58B5A0001ECD5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EC3A572925C5CB8C0001ECD5 /* CovidData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidData.swift; sourceTree = "<group>"; };
+		EC3A572E25C5DFF50001ECD5 /* MetodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetodeViewController.swift; sourceTree = "<group>"; };
+		EC3A573125C5FA7B0001ECD5 /* BeritaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeritaModel.swift; sourceTree = "<group>"; };
+		EC3A573425C5FAC90001ECD5 /* BeritaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeritaData.swift; sourceTree = "<group>"; };
 		EC5054F025C3681900348E9D /* JenisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JenisTableViewCell.swift; sourceTree = "<group>"; };
 		EC5054F125C3681900348E9D /* JenisTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JenisTableViewCell.xib; sourceTree = "<group>"; };
 		EC5054F625C36B6800348E9D /* JenisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JenisViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +195,7 @@
 				EC3A56F325C53A3D0001ECD5 /* DetailPesanViewController.swift */,
 				EC3A56F625C53A700001ECD5 /* CekStatusViewController.swift */,
 				EC3A56F925C53AB40001ECD5 /* LokasiVaksinViewController.swift */,
+				EC3A572E25C5DFF50001ECD5 /* MetodeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -207,6 +214,8 @@
 			children = (
 				EC3A572125C58B5A0001ECD5 /* User.swift */,
 				EC3A572925C5CB8C0001ECD5 /* CovidData.swift */,
+				EC3A573125C5FA7B0001ECD5 /* BeritaModel.swift */,
+				EC3A573425C5FAC90001ECD5 /* BeritaData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -377,8 +386,10 @@
 				ECDB766F25C3813F0001FA32 /* AkunViewController.swift in Sources */,
 				EC3A56EE25C46D890001ECD5 /* PesanViewController.swift in Sources */,
 				EC3A56F125C53A110001ECD5 /* CheckoutViewController.swift in Sources */,
+				EC3A572F25C5DFF50001ECD5 /* MetodeViewController.swift in Sources */,
 				EC3A56E925C4649D0001ECD5 /* JualTableViewCell.swift in Sources */,
 				ECDB768525C3AF240001FA32 /* EditViewController.swift in Sources */,
+				EC3A573225C5FA7B0001ECD5 /* BeritaModel.swift in Sources */,
 				ECDB766C25C380670001FA32 /* VaksinViewController.swift in Sources */,
 				ECDB768225C3AEFA0001FA32 /* DaftarViewController.swift in Sources */,
 				EC3A56F725C53A700001ECD5 /* CekStatusViewController.swift in Sources */,
@@ -389,6 +400,7 @@
 				ECA78AEA25C24EA00021AEC0 /* SceneDelegate.swift in Sources */,
 				EC3A56FA25C53AB40001ECD5 /* LokasiVaksinViewController.swift in Sources */,
 				ECB8D6B525C2A1850058AA75 /* BeritaCollectionViewCell.swift in Sources */,
+				EC3A573525C5FAC90001ECD5 /* BeritaData.swift in Sources */,
 				ECDB768B25C3AF800001FA32 /* DetailCekViewController.swift in Sources */,
 				EC5054F725C36B6800348E9D /* JenisViewController.swift in Sources */,
 				EC5054F225C3681900348E9D /* JenisTableViewCell.swift in Sources */,

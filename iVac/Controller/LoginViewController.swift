@@ -71,7 +71,6 @@ class LoginViewController: UIViewController {
                     self.setLoading(false);
                     switch result {
                     case .failure(let error):
-                        // Auth error: user already exists? Try logging in as that user.
                         print("Login failed: \(error)");
                      
                         return
@@ -93,9 +92,10 @@ class LoginViewController: UIViewController {
                                     fatalError("Failed to open realm: \(error)")
                                 case .success:
                                     
+                                    
+                                    self?.navigationController?.popViewController(animated: true)
                                     defaults.setValue(email, forKey: "email")
                                     defaults.synchronize()
-                                    self?.navigationController?.popViewController(animated: true)
                                 }
                             }
                         }

@@ -9,6 +9,10 @@ import UIKit
 
 class LokasiVaksinTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var rsImage: UIImageView!
+    @IBOutlet weak var rsName: UILabel!
+    @IBOutlet weak var rsPhone: UILabel!
+    @IBOutlet weak var rsAlamat: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

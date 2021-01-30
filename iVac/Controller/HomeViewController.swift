@@ -17,6 +17,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var sembuhLabel: UILabel!
     @IBOutlet weak var meninggalLabel: UILabel!
     
+    var arrSelectRow = BeritaModel(judul: "", sumber: "", tanggal: "", image: UIImage(), isi: "")
+    var data = BeritaData().data
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -110,7 +113,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == beritaCV {
-            return 5
+            return data.count
         } else {
             return 1
         }
@@ -120,14 +123,34 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if collectionView == beritaCV {
             let cell1 = beritaCV.dequeueReusableCell(withReuseIdentifier: "beritaCell", for: indexPath) as? BeritaCollectionViewCell
             
+            cell1?.title.text = data[indexPath.row].judul
+            cell1?.imageBerita.image = data[indexPath.row].image
+            
             return cell1!
         } else {
             let cell2 = tipsCV.dequeueReusableCell(withReuseIdentifier: "tipsCell", for: indexPath) as? TipsCollectionViewCell
+            
+            cell2?.titleTips.text = "Tetap laksanakan Protokol Kesehatan dan 3M"
             
             return cell2!
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            let cell = beritaCV.cellForItem(at: indexPath)
+            
+            self.arrSelectRow = data[indexPath.row]
+            
+            performSegue(withIdentifier: "toDetail", sender: cell)
+        
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dst = segue.destination as? DetailBeritaViewController
+        
+        DispatchQueue.main.async {
+            dst?.arrBerita = self.arrSelectRow
+        }
+    }
     
 }
