@@ -31,7 +31,7 @@ class AkunViewController: UIViewController {
         
         user = realm.objects(User.self)
         let userEmail = defaults.string(forKey: "email")
-        
+         
         for user in user! {
             if user.email == userEmail {
                 DispatchQueue.main.async { [self] in

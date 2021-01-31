@@ -62,13 +62,15 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func masukPressed(_ sender: UIButton) {
-        self.resignFirstResponder()
+        self.view.resignFirstResponder()
         
         if let email = emailText.text, let password = passwordText.text {
             app.login(credentials: Credentials.emailPassword(email: email, password: password)) { [self](result) in
                 
                 DispatchQueue.main.async {
-                    self.setLoading(false);
+                    self.setLoading(false)
+                    defaults.setValue(email, forKey: "email")
+                    defaults.synchronize()
                     switch result {
                     case .failure(let error):
                         print("Login failed: \(error)");
@@ -76,17 +78,18 @@ class LoginViewController: UIViewController {
                         return
                     case .success:
                         let user = app.currentUser
-                        print("Login succeeded!");
+                        print("Login succeeded!")
 
-                        self.setLoading(true);
+                        self.setLoading(true)
                        
                         var configuration = user!.configuration(partitionValue: "123")
                       
                         configuration.objectTypes = [User.self]
                         
+                        
                         Realm.asyncOpen(configuration: configuration) { [weak self](result) in
                             DispatchQueue.main.async {
-                                self!.setLoading(false);
+                                self!.setLoading(false)
                                 switch result {
                                 case .failure(let error):
                                     fatalError("Failed to open realm: \(error)")
@@ -94,8 +97,6 @@ class LoginViewController: UIViewController {
                                     
                                     
                                     self?.navigationController?.popViewController(animated: true)
-                                    defaults.setValue(email, forKey: "email")
-                                    defaults.synchronize()
                                 }
                             }
                         }

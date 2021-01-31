@@ -38,7 +38,7 @@ class VaksinViewController: UIViewController {
         cekButton.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
         cekButton.layer.shadowOpacity = 0.25
         cekButton.layer.shadowRadius = 12
-        cekButton.layer.masksToBounds = false
+        cekButton.layer.masksToBounds = false 
         
         nikText.tintColor = .systemBlue
     }
